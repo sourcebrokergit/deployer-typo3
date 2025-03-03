@@ -2,6 +2,10 @@
 
 namespace Deployer;
 
-add('clear_paths', ['assets']);
+add('clear_paths', [
+    '.env.dist',
+    'assets',
+    'README.md',
+]);
 
 task('deploy:writable')->disable();
