@@ -1,0 +1,19 @@
+{
+  "name": "sourcebrokergit/deployer-typo3",
+  "description": "Fine tuning for `sourcebroker/deployer-typo3` package with settings used at Inscript",
+  "license": "MIT",
+  "keywords": [
+    "TYPO3",
+    "deployer"
+  ],
+  "require": {
+    "deployer/deployer": "~7.0 || dev-master",
+    "sourcebroker/deployer-typo3": "*"
+  },
+  "authors": [
+    {
+      "name": "Krystian Szymukowicz",
+      "email": "k.szymukowicz@gmail.com"
+    }
+  ]
+}
