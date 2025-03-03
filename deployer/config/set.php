@@ -8,4 +8,8 @@ add('clear_paths', [
     'README.md',
 ]);
 
-task('deploy:writable')->disable();
+set('default_timeout', 900);
+
+set('keep_releases', 5);
+
+set('writable_mode', 'skip');
