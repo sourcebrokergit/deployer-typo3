@@ -24,4 +24,5 @@ task('service:reload_php_fpm', function () {
         }
     }
 })->desc('Reload PHP-FPM service.');
-after('deploy:symlink', 'service:reload:php_fpm');
+
+after('deploy:symlink', 'service:reload_php_fpm');
