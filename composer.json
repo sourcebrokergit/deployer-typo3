@@ -7,13 +7,27 @@
     "deployer"
   ],
   "require": {
-    "deployer/deployer": "~7.0 || dev-master",
-    "sourcebroker/deployer-typo3": "*"
+    "sourcebroker/deployer-typo3": "0.5.0"
   },
   "authors": [
     {
       "name": "Krystian Szymukowicz",
       "email": "k.szymukowicz@gmail.com"
     }
-  ]
+  ],
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "vendor-dir": ".Build/vendor",
+    "allow-plugins": {
+      "helhum/dotenv-connector": true,
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  }
 }
