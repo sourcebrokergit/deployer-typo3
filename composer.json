@@ -7,7 +7,7 @@
     "deployer"
   ],
   "require": {
-    "sourcebroker/deployer-typo3": "0.5.0"
+    "sourcebroker/deployer-typo3": "0.7.0"
   },
   "authors": [
     {
