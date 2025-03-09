@@ -2,6 +2,8 @@
 
 namespace Deployer;
 
+use Symfony\Component\Console\Helper\Table;
+
 /**
  * Performance fixed version. PR added https://github.com/deployphp/deployer/pull/4034
  */
