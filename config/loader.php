@@ -2,7 +2,7 @@
 
 return [
     [
-        'package' => 'sourcebrokergit/deployer-extended',
+        'package' => 'sourcebroker/deployer-extended',
     ],
     [
         'path' => 'vendor/sourcebroker/deployer-extended/includes/settings/bin_composer.php',
