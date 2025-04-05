@@ -2,6 +2,9 @@
 
 return [
     [
+        'package' => 'sourcebrokergit/deployer-extended',
+    ],
+    [
         'path' => 'vendor/sourcebroker/deployer-extended/includes/settings/bin_composer.php',
     ],
     [
