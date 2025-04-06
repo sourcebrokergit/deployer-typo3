@@ -2,10 +2,10 @@
 
 namespace Deployer;
 
-// We use the "bin/composer" from "sourcebroker/deployer-extended/includes/settings/bin_composer.php"
+// We use the "bin/composer" from "sourcebroker/deployer-extended/includes/settings/bin_composer.php".
 set('composer_channel', '2');
 
-// We store the frontend in "assets" folder.
+// Add custom clear path compared to sourcebroker/deployer-typo3-deploy*
 add('clear_paths', [
     '.env.dist',
     'assets',
@@ -15,13 +15,13 @@ add('clear_paths', [
 # Deployer standard is 300. This can be too little for db:media tasks.
 set('default_timeout', 900);
 
-# Deployer standard is 10 releases. This is too many for us.
+# Deployer standard is 10 releases.
 set('keep_releases', 5);
 
-# For most hosters we use, the ssh username is the same as httpd user.
+# For 100% hosters we used so far, the ssh username is the same as httpd user.
 set('writable_mode', 'skip');
 
-# Set the branch you want to deploy explicitly by setting `->set("branch", "main");` or by adding cli param `--branch=`
+# Force the branch to deploy to be explicitly set by `->set("branch", "main");` or by adding cli param `--branch=`
 # If branch is not set the task "deploy:check_branch_local" will stop deploy.
 set('branch', function () {
     return null;
@@ -40,5 +40,16 @@ set('db_allow_push_live', false);
 set('db_allow_pull_live', false);
 set('db_allow_copy_live', false);
 
-// Set database backup rotations
-set('db_dumpclean_keep', ['*' => 5, 'live' => 10,]);
+// Set custom database backup rotations
+set('db_dumpclean_keep', ['*' => 5, 'live' => 10]);
+
+// Extend ignore_tables_out defined in sourcebroker/deployer-typo3-database
+$dbDefault = get('db_default');
+$dbDefault['ignore_tables_out'] = [
+    ...($dbDefault['ignore_tables_out'] ?? []),
+    'sys_history',
+    'sys_log',
+    'tx_powermail_domain_model_mail',
+    'tx_powermail_domain_model_answer',
+];
+set('db_default', $dbDefault);

@@ -7,8 +7,8 @@
     "deployer"
   ],
   "require": {
-    "sourcebroker/deployer-typo3": "^0.14.0",
-    "sourcebroker/deployer-extended": "^22 || dev-master"
+    "sourcebroker/deployer-typo3": "^0.15.0",
+    "sourcebroker/deployer-extended": "^23 || dev-master"
   },
   "authors": [
     {
